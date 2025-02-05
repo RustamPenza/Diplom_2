@@ -20,7 +20,7 @@ public class BaseHttpClient {
         protected Response doGetRequest(String path, String token) {
         return given()
                 .spec(baseRequestSpec)
-                .auth().oauth2(token)
+                .header("Authorization", token)
                 .get(path)
                 .thenReturn();
     }
@@ -36,7 +36,7 @@ public class BaseHttpClient {
     protected Response doPostRequest(String path, Object body, String token) {
         return given()
                 .spec(baseRequestSpec)
-                .auth().oauth2(token)
+                .header("Authorization", token)
                 .body(body)
                 .post(path)
                 .thenReturn();
