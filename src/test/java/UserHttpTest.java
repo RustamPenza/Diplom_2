@@ -13,7 +13,7 @@ public class UserHttpTest {
 
     @Before
     public void setUp() {
-        user = new User("fake13@mail.ru", "123456", "Alesha");
+        user = new User("fake5446454@mail.ru", "123456", "Alesha");
     }
 
     @After
