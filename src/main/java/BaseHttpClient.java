@@ -17,7 +17,7 @@ public class BaseHttpClient {
             .setRelaxedHTTPSValidation()
             .build();
 
-        protected Response doGetRequest(String path, String token) {
+    protected Response doGetRequest(String path, String token) {
         return given()
                 .spec(baseRequestSpec)
                 .header("Authorization", token)

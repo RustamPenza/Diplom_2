@@ -17,17 +17,20 @@ public class OrderHttpTest {
 
     private final OrderHttp orderHttp = new OrderHttp();
     private final List<String> ingredientIds = new ArrayList<>();
+    private List<Ingredient> allIngredients;
 
     private final Map<String, List<String>> ingredients = new HashMap<>();
 
 
     @Before
     public void setUp() {
-        user = new User("fake5446454@mail.ru", "123456", "Alesha");
+        user = new User("faky7788@mail.ru", "123456", "Alesha");
         userHttp.createUser(user);
-        ingredientIds.add("61c0c5a71d1f82001bdaaa72");
-        ingredientIds.add("61c0c5a71d1f82001bdaaa6f");
-        ingredientIds.add("61c0c5a71d1f82001bdaaa70");
+        allIngredients = orderHttp.getIngredients(user);
+
+        ingredientIds.add(allIngredients.get(0).get_id());
+        ingredientIds.add(allIngredients.get(1).get_id());
+        ingredientIds.add(allIngredients.get(2).get_id());
         ingredients.put("ingredients", ingredientIds);
     }
 
